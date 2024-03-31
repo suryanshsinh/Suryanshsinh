@@ -1,0 +1,198 @@
+.window-outline {
+    margin: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    /* border: 2px solid #f2f2f2; */
+    border: 1px solid rgba(242, 242, 242, .15);
+    border-radius: 25px;
+    max-width: 1000px;
+    background-image: radial-gradient(circle farthest-side at 50% 0, rgba(220, 220, 220, .1), rgba(0, 0, 0, 0));
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, .6), 0 0 60px rgba(0, 0, 0, .4), 0 0 0;
+}
+
+.window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 100%;
+    border: 1px solid rgba(242, 242, 242, .3);
+    border: 1px solid rgba(242, 242, 242, .3);
+    margin: 10px;
+}
+
+.window .title-bar {
+    height: 40px;
+    width: 100%;
+    backdrop-filter: blur(40px);
+    background-image: linear-gradient(to right, rgba(242, 242, 242, .1), rgba(242, 242, 242, .5) 50%, rgba(242, 242, 242, .1));
+    border-radius: 19px 19px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.work-window.work-window {
+    background: rgba(242, 242, 242, .04);
+}
+
+.work-window .window {
+    background-image: linear-gradient(190deg, #252525, #111);
+}
+
+.title-bar-buttons {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.title-bar-buttons .button {
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(16, 16, 16, .25);
+    border-radius: 100px;
+}
+
+.button.red {
+    background-color: #f46b5d;
+    box-shadow: 0 0 20px 2px #f46b5d;
+}
+.button.yellow {
+    background-color: #f9bd4e;
+    box-shadow: 0 0 20px 2px #f9bd4e;
+}
+.button.green {
+    background-color: #57c353;
+    box-shadow: 0 0 20px 2px #57c353;
+}
+
+
+
+.window-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-radius: 0 0 19px 19px;
+}
+
+.hero {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 132px;
+    margin: 70px 0;
+    text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 0px 25px rgba(255, 255, 255, .3);
+}
+
+.heading {
+    font-family: "Neue Montreal Medium", sans-serif;
+    font-weight: 400;
+    letter-spacing: -2px;
+    font-size: 60px;
+    color: white;
+}
+
+.word-carousel .heading {
+    text-wrap: nowrap;
+}
+
+.word-carousel {
+    display: flex;
+}
+
+.words {
+    position: relative;
+    display: block;
+    height: 105px;
+    color: transparent;
+    overflow: hidden;
+    margin-top: -8px;
+    margin-left: -5px;
+}
+
+.words h2 {
+    font-family: "Gloock", sans-serif;
+    font-size: 60px;
+    letter-spacing: 1px;
+    font-style: italic;
+    padding: 10px 30px 25px 20px;
+    animation: slide 6s ease-in-out infinite;
+    background: linear-gradient(to bottom, #f2f2f2 50%, #7e7e7e 60%);
+    background-clip: text;
+}
+
+@keyframes slide {
+    13% {
+        transform: translateY(-100%);
+    }
+    33% {
+        transform: translateY(-100%);
+    }
+    53% {
+        transform: translateY(-200%);
+    }
+    66% {
+        transform: translateY(-200%);
+    }
+    87% {
+        transform: translateY(-300%);
+    }
+    100% {
+        transform: translateY(-300%);
+    }
+}
+
+.subtitles {
+    font-family: "Neue Montreal Book", sans-serif;
+    padding: 0 70px;
+    display: flex;
+    letter-spacing: 1px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-end;
+    font-size: 20px;
+    color: rgba(242, 242, 242, 1);
+}
+
+.subtitle:nth-child(2) {
+    color: rgba(242, 242, 242, .5);
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-wheel {
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 50px;
+    margin-top: 60px;
+    border: 2px solid rgba(242, 242, 242, .2);
+    border-radius: 30px;
+    background-image: radial-gradient(circle farthest-side at 50% 0, rgba(220, 220, 220, .1), rgba(0, 0, 0, 0));
+}
+
+.scroll-handle {
+    width: 4px;
+    height: 20%;
+    transform: translateY(100%);
+    border-radius: 3px;
+    background-color: rgba(242, 242, 242, .3);
+    animation: scroll 3s ease-in-out infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(100%);
+    } 
+    60% {
+        transform: translateY(300%);
+    }
+    to {
+        transform: translateY(300%);
+    }
+}
