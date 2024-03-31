@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
 import linkImage from "../assets/link.png";
 import './navbar.css';
 
@@ -23,7 +24,13 @@ export default function Navbar({workPage, setWorkPage}) {
             <div className="nav">
                 <h1 className="logo">Suryanshsinh Sisodiya</h1>
                 <div className="page-menu">
-                    <div className="nav-glow" style={{marginLeft: workPage ? '35px' : 'auto', marginRight: workPage ? 'auto' : '33px'}}></div>
+                <CSSTransition 
+                    in={workPage}
+                    timeout={500}
+                    classNames="animate-nav-glow"
+                >
+                    <div className="nav-glow"></div>
+                </CSSTransition>
                     <div className="page-buttons">
                         <div className="page-button work" onClick={() => setWorkPage(true)} style={{background: workPage ? "rgba(242, 242, 242, 0.1)" : "none"}}>Work</div>
                         <div className="page-button info" onClick={() => setWorkPage(false)} style={{background: workPage ? "none" : "rgba(242, 242, 242, 0.1)"}}>Info</div>

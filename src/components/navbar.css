@@ -97,3 +97,25 @@
     left: 0;
     right: 0;
 }
+
+
+.animate-nav-glow-enter {
+    margin: auto 33px auto auto;
+}
+.animate-nav-glow-enter-active {
+    margin: auto auto auto 35px;
+    transition: margin 500ms ease-in-out;
+}
+.animate-nav-glow-enter-done{
+    margin: auto auto auto 35px;
+}
+.animate-nav-glow-exit {
+    margin: auto auto auto 35px;
+}
+.animate-nav-glow-exit-active {
+    margin: auto 33px auto auto;
+    transition: margin 500ms ease-in-out;
+}
+.animate-nav-glow-exit-done{
+    margin: auto 33px auto auto;
+}
