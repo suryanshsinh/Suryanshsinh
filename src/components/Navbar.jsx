@@ -32,8 +32,15 @@ export default function Navbar({workPage, setWorkPage}) {
                     <div className="nav-glow"></div>
                 </CSSTransition>
                     <div className="page-buttons">
-                        <div className="page-button work" onClick={() => setWorkPage(true)} style={{background: workPage ? "rgba(242, 242, 242, 0.1)" : "none"}}>Work</div>
-                        <div className="page-button info" onClick={() => setWorkPage(false)} style={{background: workPage ? "none" : "rgba(242, 242, 242, 0.1)"}}>Info</div>
+                        <CSSTransition
+                            in={workPage}
+                            timeout={500}
+                            classNames="animate-page-bg"
+                        >
+                            <div className="page-button-bg"></div>
+                        </CSSTransition>
+                        <div className="page-button work" onClick={() => setWorkPage(true)}>Work</div>
+                        <div className="page-button info" onClick={() => setWorkPage(false)}>Info</div>
                     </div>
                 </div>
                 <div className="links">

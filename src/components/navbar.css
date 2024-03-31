@@ -15,6 +15,7 @@
 }
 
 .page-buttons {
+    position: relative;
     display: flex;
     gap: 10px;
     width: auto;
@@ -29,8 +30,43 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
 
-.page-button {
+.page-button-bg {
     background: rgba(242, 242, 242, 0.1);
+    width: 37px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: auto;
+    bottom: 5px;
+    z-index: -1;
+    transform: translate(0%);
+}
+
+.animate-page-bg-enter {
+    transform: translate(100%);
+}
+.animate-page-bg-enter-active {
+    transform: translate(0%);
+    transition: transform 500ms ease;
+}
+.animate-page-bg-enter-done{
+    transform: translate(0%);
+}
+.animate-page-bg-exit {
+    transform: translate(0%);
+}
+.animate-page-bg-exit-active {
+    transform: translate(100%);
+    transition: transform 500ms ease;
+}
+.animate-page-bg-exit-done{
+    transform: translate(100%);
+}
+
+.page-button {
+    /* background: rgba(242, 242, 242, 0.1); */
     color: white;
     /* width: 80px; */
     padding: 10px 25px;
@@ -44,9 +80,29 @@
     height: 2px;
     background-color: #f2f2f2;
     border-radius: 2px 2px 0 0;
-    margin-left: 33px;
-    margin-right: auto;
+    transform: translateX(35px);
     box-shadow: 0 2px 25px 2px #fff;
+}
+
+.animate-nav-glow-enter {
+    transform: translateX(127px);
+}
+.animate-nav-glow-enter-active {
+    transform: translateX(35px);
+    transition: transform 500ms ease-in-out;
+}
+.animate-nav-glow-enter-done{
+    transform: translateX(35px);
+}
+.animate-nav-glow-exit {
+    transform: translateX(35px);
+}
+.animate-nav-glow-exit-active {
+    transform: translateX(127px);
+    transition: transform 500ms ease-in-out;
+}
+.animate-nav-glow-exit-done{
+    transform: translateX(127px);
 }
 
 .links {
@@ -96,26 +152,4 @@
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-
-.animate-nav-glow-enter {
-    margin: auto 33px auto auto;
-}
-.animate-nav-glow-enter-active {
-    margin: auto auto auto 35px;
-    transition: margin 500ms ease-in-out;
-}
-.animate-nav-glow-enter-done{
-    margin: auto auto auto 35px;
-}
-.animate-nav-glow-exit {
-    margin: auto auto auto 35px;
-}
-.animate-nav-glow-exit-active {
-    margin: auto 33px auto auto;
-    transition: margin 500ms ease-in-out;
-}
-.animate-nav-glow-exit-done{
-    margin: auto 33px auto auto;
 }
