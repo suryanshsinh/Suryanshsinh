@@ -11,18 +11,8 @@
 }
 
 @font-face {
-    font-family: "Neue Montreal Light";
-    src:url('./assets/fonts/PPNeueMontreal-Italic.otf'), format('opentype');
-}
-
-@font-face {
     font-family: "Neue Montreal Medium";
     src:url('./assets/fonts/PPNeueMontreal-Medium.otf'), format('opentype');
-}
-
-@font-face {
-    font-family: "Neue Montreal SemiBold";
-    src:url('./assets/fonts/PPNeueMontreal-SemiBold.otf'), format('opentype');
 }
 
 @font-face {

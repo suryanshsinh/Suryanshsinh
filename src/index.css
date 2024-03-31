@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Neue Montreal Medium";
   background-color: #111;
   overflow-x: hidden;
 }
@@ -17,12 +17,15 @@ body {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 3rem 3rem;
-  background-color: #111;
-  /* background-color: #444; */
+  align-items: center;
+  z-index: 2;
 }
 
 main {
@@ -30,6 +33,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10rem;
 }
 
 section {
@@ -81,11 +85,8 @@ section {
 }
 
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
-}
-::-webkit-scrollbar:hover {
-  width: 10px;
+  background: #222;
 }

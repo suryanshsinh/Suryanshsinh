@@ -4,9 +4,11 @@ import Window from "./components/Window"
 import ProjectCard from "./components/ProjectCard"
 
 export default function App() {
+    const [workPage, setWorkPage] = React.useState(true);
+
     return (
         <div className="app"><div className="glare-top"></div>
-            <Navbar />
+            <Navbar workPage={workPage} setWorkPage={setWorkPage}/>
             <main>
                 <Window />
                 <div className="fade-out"></div>
