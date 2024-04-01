@@ -9,6 +9,7 @@ body {
   font-family: "Neue Montreal Medium";
   background-color: #111;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .app {
@@ -82,6 +83,77 @@ section {
   height: 100%;
   width: 100%;
   pointer-events: none;
+}
+
+.fade-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(17,17,17,1) 0%, rgba(17,17,17,0) 100%);
+  height: 150%;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  animation: fade-out 3.1s ease-in-out infinite;
+}
+
+.loading-text {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.loading-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  animation: loading-line 3.1s ease-in-out infinite;
+}
+
+@keyframes loading-line {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+  20% {
+    left: 0;
+    right: 40%;
+  }
+  70% {
+    left: 0;
+    right: 20%;
+  }
+  90% {
+    left: 0;
+    right: 0%;
+  }
+  100% {
+    left: 0;
+    right: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 ::-webkit-scrollbar {

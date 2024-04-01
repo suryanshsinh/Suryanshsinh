@@ -41,28 +41,28 @@
     right: auto;
     bottom: 5px;
     z-index: -1;
-    transform: translate(0%);
+    transform: translateX(0%);
 }
 
 .animate-page-bg-enter {
-    transform: translate(100%);
+    transform: translateX(100%) scaleX(96%);
 }
 .animate-page-bg-enter-active {
-    transform: translate(0%);
+    transform: translateX(0%) scaleX(100%);
     transition: transform 500ms ease;
 }
 .animate-page-bg-enter-done{
-    transform: translate(0%);
+    transform: translateX(0%) scaleX(100%);
 }
 .animate-page-bg-exit {
-    transform: translate(0%);
+    transform: translateX(0%) scaleX(100%);
 }
 .animate-page-bg-exit-active {
-    transform: translate(100%);
+    transform: translateX(100%) scaleX(96%);
     transition: transform 500ms ease;
 }
 .animate-page-bg-exit-done{
-    transform: translate(100%);
+    transform: translateX(100%) scaleX(96%);
 }
 
 .page-button {

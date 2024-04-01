@@ -20,7 +20,7 @@ export default function Window() {
                 <div className="window-content">
                     <HeroText />
                     <div className="subtitles">
-                        <h3 className="subtitle">First-year student at LJ Univeersity.</h3>
+                        <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
                         <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
                     </div>
                     {/* <div className="scroll-indicator">
