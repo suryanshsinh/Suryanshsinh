@@ -12,7 +12,7 @@ export default function App() {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 0);
+        }, 3000);
     }, [loading]);
     
     return (
