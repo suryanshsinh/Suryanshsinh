@@ -45,7 +45,7 @@
 }
 
 .animate-page-bg-enter {
-    transform: translateX(100%) scaleX(96%);
+    transform: translateX(100%) scaleX(95%);
 }
 .animate-page-bg-enter-active {
     transform: translateX(0%) scaleX(100%);
@@ -58,11 +58,11 @@
     transform: translateX(0%) scaleX(100%);
 }
 .animate-page-bg-exit-active {
-    transform: translateX(100%) scaleX(96%);
+    transform: translateX(100%) scaleX(95%);
     transition: transform 500ms ease;
 }
 .animate-page-bg-exit-done{
-    transform: translateX(100%) scaleX(96%);
+    transform: translateX(100%) scaleX(95%);
 }
 
 .page-button {

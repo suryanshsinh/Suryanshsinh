@@ -1,16 +1,17 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
+import { BrowserRouter, Route, Link } from "react-router-dom"
 import linkImage from "../assets/link.png";
 import './navbar.css';
 
 export default function Navbar({workPage, setWorkPage, setLoading}) {
     const links = [
-        {link: 'https://linkedin/in/suryanshsinh', text: 'LinkedIn', external: true},
+        {key: 1, link: 'https://linkedin/in/suryanshsinh', text: 'LinkedIn', external: true},
     ]
 
     const linkItems = links.map((link) => {
             return (
-                <a href={link.link} className="link">
+                <a href={link.link} className="link" key={link.key}>
                     <span className="glow"></span>
                     {link.text}
                     {link.external && <img src={linkImage} alt={link.text} />}
