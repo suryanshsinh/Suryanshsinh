@@ -13,6 +13,9 @@
     color: #eee;
     flex: 1;
 }
+.logo { display: flex; }
+.logo-2 { display: none; }
+.logo-3 { display: none; }
 
 .page-buttons {
     position: relative;

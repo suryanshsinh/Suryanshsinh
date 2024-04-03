@@ -38,6 +38,8 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
             <div className="fade-in"></div>
             <div className="nav">
                 <h1 className="logo">Suryanshsinh Sisodiya</h1>
+                <h1 className="logo logo-2">S. Sisodiya</h1>
+                <h1 className="logo logo-3">S.</h1>
                 <div className="page-menu">
                 <CSSTransition 
                     in={workPage}

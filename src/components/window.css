@@ -91,9 +91,7 @@
 
 .hero {
     position: relative;
-    padding-left: 30px;
-    padding-right: 132px;
-    margin: 70px 0;
+    padding: 70px 132px 70px 30px;
     text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 0px 25px rgba(255, 255, 255, .3);
 }
 
@@ -111,6 +109,7 @@
 
 .word-carousel {
     display: flex;
+    margin-top: 8px;
 }
 
 .words {
@@ -205,5 +204,69 @@
     }
     to {
         transform: translateY(300%);
+    }
+}
+
+@media screen and (max-width: 1086px) {
+    .window-outline {
+        height: 600px;
+    }
+
+    .hero {
+        padding: 4vh 3vw 8vh 20px;
+    }
+
+    .heading, .words h2 {
+        font-size: 5vw;
+    }
+
+    .words {
+        height: 95px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .logo { display: none; }
+    .logo-2 { display: flex; }
+    .logo-3 { display: none; }
+    .subtitles {
+        align-self: flex-start;
+        padding: 0 30px;
+        font-size: 2vw;
+    }
+    .words {
+        height: 13vh;
+    }
+
+    .heading, .words h2 {
+        font-size: 6vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .window-outline {
+        margin: 0;
+        margin-bottom: 3rem;
+        height: 80vw;
+    }
+    .hero {
+        padding: 2vh 3vw 5vw 10px;
+    }
+    .words {
+        height: 12vw;
+    }
+    .subtitles {
+        padding: 0 15px;
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .logo { display: none; }
+    .logo-2 { display: none; }
+    .logo-3 { display: flex; }
+    
+    .heading {
+        letter-spacing: -1.5px;
     }
 }
