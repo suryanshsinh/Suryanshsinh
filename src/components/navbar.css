@@ -29,6 +29,9 @@
     background-color: rgba(242, 242, 242, .05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
+.page-buttons a {
+    text-decoration: none;
+}
 
 .page-button-bg {
     background: rgba(242, 242, 242, 0.1);

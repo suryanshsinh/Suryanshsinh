@@ -32,7 +32,7 @@ function AppInfo() {
 
 
 export default function App() {
-    const [workPage, setWorkPage] = React.useState(true);
+    const [workPage, setWorkPage] = React.useState(window.location.pathname === '/');
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
@@ -40,19 +40,10 @@ export default function App() {
             setLoading(false);
         }, 3000);
     }, [loading]);
-    
+
     return (
         <div className="app">
-            <div className="glare-top"></div>
-                {/* <Routes>
-                    <Route path="/" exact>
-                        {setWorkPage(true)}
-                    </Route>
-                    <Route path="/info" exact>
-                        {setWorkPage(false)}
-                    </Route>
-                </Routes> */}
-            
+            <div className="glare-top"></div>            
             <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading}/>
             {
                 (loading) 
