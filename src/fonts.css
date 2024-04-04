@@ -3,20 +3,24 @@
 @font-face {
     font-family: "Neue Montreal Bold";
     src:url('./assets/fonts/PPNeueMontreal-Bold.otf'), format('opentype');
+    font-display:block;
 }
 
 @font-face {
     font-family: "Neue Montreal Book";
     src:url('./assets/fonts/PPNeueMontreal-Book.otf'), format('opentype');
+    font-display:block;
 }
 
 @font-face {
     font-family: "Neue Montreal Medium";
     src:url('./assets/fonts/PPNeueMontreal-Medium.otf'), format('opentype');
+    font-display:block;
 }
 
 @font-face {
     font-family: "Neue Montreal Thin";
     src:url('./assets/fonts/PPNeueMontreal-Thin.otf'), format('opentype');
+    font-display:block;
 }
 

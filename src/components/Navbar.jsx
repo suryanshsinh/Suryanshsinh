@@ -7,17 +7,27 @@ import './navbar.css';
 export default function Navbar({workPage, setWorkPage, setLoading}) {
     const [menuBgStyles, setMenuBgStyles] = React.useState( {transform: "translateX(0%) scaleX(100%)"})
     const [menuGlowStyles, setMenuGlowStyles] = React.useState( {transform: "translateX(35px)"} )
-    
+    const [mobilePopup, setMobilePopup] = React.useState(false)
+
     const links = [
-        {key: 1, link: 'https://linkedin/in/suryanshsinh', text: 'LinkedIn', external: true},
+        {key: 1, link: 'https://linkedin.com/in/suryanshsinh', text: 'LinkedIn', external: true},
     ]
 
     const linkItems = links.map((link) => {
             return (
                 <a href={link.link} className="link" key={link.key}>
-                    <span className="glow"></span>
+                    <span className="link-glow"></span>
                     {link.text}
-                    {link.external && <img src={linkImage} alt={link.text} />}
+                    {link.external && <img className="external-link-arrow" src={linkImage} alt={link.text} />}
+                </a>
+            )
+        }
+    )    
+    const mobileLinkItems = links.map((link) => {
+            return (
+                <a href={link.link} target="_blank" className="mobile-link" key={link.key}>
+                    {link.text}
+                    {link.external && <img className="external-link-arrow" src={linkImage}/>}
                 </a>
             )
         }
@@ -30,7 +40,7 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
 
     React.useEffect(() => {
         setMenuBgStyles({transform: workPage ? "translateX(0%) scaleX(100%)" : "translateX(100%) scaleX(95%)"})
-        setMenuGlowStyles({transform: workPage ? "translateX(35px)" : "translateX(127px)"})
+        setMenuGlowStyles({transform: workPage ? "translateX(35px)" : "translateX(125px)"})
     }, [])
 
     return (
@@ -40,28 +50,62 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
                 <h1 className="logo">Suryanshsinh Sisodiya</h1>
                 <h1 className="logo logo-2">S. Sisodiya</h1>
                 <h1 className="logo logo-3">S.</h1>
-                <div className="page-menu">
-                <CSSTransition 
-                    in={workPage}
-                    timeout={500}
-                    classNames="animate-nav-glow"
-                >
-                    <div className="nav-glow" style={menuGlowStyles}></div>
-                </CSSTransition>
-                    <div className="page-buttons">
-                        <CSSTransition
+                <div className="menu">
+                    <div className="page-menu">
+                        <CSSTransition 
                             in={workPage}
                             timeout={500}
-                            classNames="animate-page-bg"
+                            classNames="animate-nav-glow"
                         >
-                            <div className="page-button-bg" style={menuBgStyles}></div>
+                            <div className="nav-glow" style={menuGlowStyles}></div>
                         </CSSTransition>
-                        <Link to="/">
-                            <div className="page-button" onClick={() => {setWorkPage(true); setLoading(true)}}>Work</div>
-                        </Link>
-                        <Link to="/info">
-                        <div className="page-button" onClick={() => {setWorkPage(false); setLoading(true)}}>Info</div>
-                        </Link>
+                        <div className="page-buttons">
+                            <CSSTransition
+                                in={workPage}
+                                timeout={500}
+                                classNames="animate-page-bg"
+                            >
+                                <div className="page-button-bg" style={menuBgStyles}></div>
+                            </CSSTransition>
+                            <Link to="/">
+                                <div className="page-button" onClick={() => {setWorkPage(true); setLoading(true)}}>Work</div>
+                            </Link>
+                            <Link to="/info">
+                                <div className="page-button" onClick={() => {setWorkPage(false); setLoading(true);}}>Info</div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="hamburger" onClick={() => setMobilePopup(prev => !prev)}>
+                        <CSSTransition
+                            in={!mobilePopup}
+                            timeout={500}
+                            classNames="animate-hamburger-line-1"
+                        >
+                            <div className="line line-1"></div>
+                        </CSSTransition>
+                        <CSSTransition
+                            in={!mobilePopup}
+                            timeout={500}
+                            classNames="animate-hamburger-line-2"
+                        >
+                            <div className="line line-2"></div>
+                        </CSSTransition>
+                        <CSSTransition
+                            in={!mobilePopup}
+                            timeout={500}
+                            classNames="animate-hamburger-line-3"
+                        >
+                            <div className="line line-3"></div>
+                        </CSSTransition>
+                        <CSSTransition
+                            in={mobilePopup}
+                            timeout={500}
+                            classNames="animate-popup"
+                        >
+                            <div className="popup" onClick={(e) => e.stopPropagation()}>
+                                {mobileLinkItems}
+                            </div>
+                        </CSSTransition>
                     </div>
                 </div>
                 <div className="links">
