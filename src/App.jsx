@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Window from "./components/Window"
+import HeroText from "./components/HeroText"
 import Loading from "./components/Loading"
 import Info from "./components/Info"
 import ProjectCard from "./components/ProjectCard"
@@ -13,9 +14,16 @@ function AppWork() {
             <main>
                 <Window />
                 <div className="fade-out"></div>
+                <div className="mobile-window">
+                    <HeroText />
+                    <div className="subtitles">
+                        <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
+                        <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
+                    </div>
+                </div>
             </main>
             <section>
-                <ProjectCard />
+                <ProjectCard title="GEAR5.info"/>
             </section>
         </>
     )

@@ -45,12 +45,8 @@
     align-items: center;
 }
 
-.work-window.work-window {
-    background: rgba(242, 242, 242, .04);
-}
-
 .work-window .window {
-    background-image: linear-gradient(190deg, #252525, #111);
+    background-image: linear-gradient(180deg, #252525, rgba(17, 17, 17, .7));
 }
 
 .title-bar-buttons {
@@ -99,6 +95,7 @@
     font-family: "Neue Montreal Medium", sans-serif;
     font-weight: 400;
     letter-spacing: -2px;
+    line-height: 60px;
     font-size: 60px;
     color: white;
 }
@@ -109,7 +106,7 @@
 
 .word-carousel {
     display: flex;
-    margin-top: 8px;
+    margin-top: 13px;
 }
 
 .words {
@@ -118,7 +115,7 @@
     height: 105px;
     color: transparent;
     overflow: hidden;
-    margin-top: -10px;
+    margin-top: -15px;
     margin-left: -5px;
 }
 
@@ -170,29 +167,8 @@
     color: rgba(242, 242, 242, .5);
 }
 
-.scroll-indicator {
-    display: flex;
-    justify-content: center;
-}
-
-.scroll-wheel {
-    display: flex;
-    justify-content: center;
-    width: 20px;
-    height: 50px;
-    margin-top: 60px;
-    border: 2px solid rgba(242, 242, 242, .2);
-    border-radius: 30px;
-    background-image: radial-gradient(circle farthest-side at 50% 0, rgba(220, 220, 220, .1), rgba(0, 0, 0, 0));
-}
-
-.scroll-handle {
-    width: 4px;
-    height: 20%;
-    transform: translateY(100%);
-    border-radius: 3px;
-    background-color: rgba(242, 242, 242, .3);
-    animation: scroll 3s ease-in-out infinite;
+.mobile-window {
+    display: none;
 }
 
 @keyframes scroll {
@@ -210,7 +186,7 @@
 @media screen and (max-width: 1086px) {
     .window-outline {
         height: 600px;
-        margin: 3rem 5vw;
+        margin: auto 5vw;
     }
 
     .hero {
@@ -223,6 +199,7 @@
 
     .words {
         height: 95px;
+        margin-top: -10px;
     }
 }
 
@@ -236,7 +213,8 @@
         font-size: 2vw;
     }
     .words {
-        height: 13vh;
+        height: 15vh;
+        margin-top: -8px;
     }
 
     .heading, .words h2 {
@@ -248,7 +226,9 @@
     .nav {
         padding: 2rem;
     }
-
+    .word-carousel {
+        margin-top: 0;
+    }
     .window-outline {
         margin: 3rem 0 9vw;
         height: 80vw;
@@ -258,6 +238,7 @@
     }
     .words {
         height: 12vw;
+        margin-top: -10px;
     }
     .subtitles {
         padding: 0 15px;
@@ -270,6 +251,13 @@
     .logo-2 { display: none; }
     .logo-3 { display: flex; }
     
+    .word-carousel {
+        margin-top: -5px;
+    }
+    .words {
+        height: 12vw;
+        margin-top: 0px;
+    }
     .links {
         display: none;
     }
@@ -284,5 +272,55 @@
     
     .heading {
         letter-spacing: -1.5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main .window-outline {
+        display: none;
+    }
+    .words {
+        margin-top: -8px;
+    }
+    main .fade-out {
+        display: none;
+    }
+
+
+    .work-window {
+        margin: 5rem 2rem 2rem;
+    }
+    .hero {
+        margin: 30px;
+        padding: 0;
+    }
+
+    .word-carousel {
+        margin-top: 10px;
+    }
+    .words {
+        height: 20vw;
+    }
+
+    .heading, .words h2 {
+        font-size: 10vw;
+    }
+
+    .subtitles {
+        padding: 0 30px;
+        font-size: 4vw;
+    }
+    .mobile-window {
+        display: contents;
+    }
+}
+@media screen and (max-width: 400px){
+    .words {
+        margin-top: -3px;
+    }
+}
+@media screen and (max-width: 350px){
+    .heading {
+        line-height: 50px;
     }
 }

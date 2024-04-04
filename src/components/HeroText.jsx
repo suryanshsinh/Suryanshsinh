@@ -11,7 +11,6 @@ export default function Hero() {
                     <h2 className="word">Designer</h2>
                     <h2 className="word">Creator</h2>
                     <h2 className="word">Developer</h2>
-                    <div className="glare-bottom"></div>
                 </div>
             </div>
         </div>

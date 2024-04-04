@@ -68,10 +68,10 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
                                 <div className="page-button-bg" style={menuBgStyles}></div>
                             </CSSTransition>
                             <Link to="/">
-                                <div className="page-button" onClick={() => {setWorkPage(true); setLoading(true)}}>Work</div>
+                                <div className="page-button" onClick={() => {!workPage && setWorkPage(true); !workPage && setLoading(true)}}>Work</div>
                             </Link>
                             <Link to="/info">
-                                <div className="page-button" onClick={() => {setWorkPage(false); setLoading(true);}}>Info</div>
+                                <div className="page-button" onClick={() => {workPage && setWorkPage(false); workPage && setLoading(true);}}>Info</div>
                             </Link>
                         </div>
                     </div>

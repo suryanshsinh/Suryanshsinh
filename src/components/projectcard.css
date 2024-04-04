@@ -1,0 +1,46 @@
+.work-window {
+    position: relative;
+    margin: 0 2rem 2rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.work-window .window {
+    position: relative;
+    display: flex;
+    font-family: "Neue Montreal Book", sans-serif;
+    padding: 2rem 1.8rem;
+    color: #eee;
+}
+
+.project .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project .title img {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media screen and (max-width: 1086px) {
+    .work-window {
+        margin: auto 5vw;
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .work-window {
+        margin: auto 5vw;
+        width: 87%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .work-window {
+        margin: 10rem 5vw;
+        width: 90%;
+    }
+    
+}
