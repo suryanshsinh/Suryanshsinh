@@ -23,7 +23,7 @@ function AppWork() {
                 </div>
             </main>
             <section>
-                <ProjectCard title="GEAR5.info"/>
+                <ProjectCard title="GEAR5.info" company="December 23'" subtitle="Reviving classic games for the digital age."/>
             </section>
         </>
     )
@@ -51,7 +51,7 @@ export default function App() {
 
     return (
         <div className="app">
-            <div className="glare-top"></div>            
+            <div className="glare-top"></div>       
             <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading}/>
             {
                 (loading) 

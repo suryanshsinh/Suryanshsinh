@@ -2,15 +2,53 @@
     position: relative;
     margin: 0 2rem 2rem;
     width: 100%;
-    max-width: 1000px;
+    text-decoration: none;
+    max-width: 1000px;background-image: linear-gradient(190deg, #252525, #101010);
 }
 
-.work-window .window {
+.work-window .project {
     position: relative;
     display: flex;
+    justify-content: center;
     font-family: "Neue Montreal Book", sans-serif;
-    padding: 2rem 1.8rem;
+    padding: 3rem 2.5rem 0;
+    gap: 70px;
     color: #eee;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.project * {
+    z-index: 1;
+}
+
+.radial-bg-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 0;
+    border-radius: inherit;
+    transition: opacity .3s ease-in-out;
+    background: radial-gradient(circle at 50% 0, rgba(127, 207, 255, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0));
+}
+
+.work-window .project:hover .radial-bg-effect {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.work-window .project:hover img {
+    margin-right: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.projectcard-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .project .title {
@@ -21,6 +59,36 @@
 .project .title img {
     width: 2rem;
     height: 2rem;
+    margin-right: 25px;
+    transition: all .3s ease-in-out;
+}
+
+.projectcard-description {
+    letter-spacing: 0.5px;
+    color: rgba(242, 242, 242, .6);
+}
+.projectcard-company {
+    color: #eee;
+}
+
+.projectcard-image {
+    background-image: url('https://assets-global.website-files.com/63dcb6e1a80e9454b630f4c4/643ecb449eefba0f82ecf90f_stadiabt-banner-mobile-p-800.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(30px);
+    box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .25);
+    transition: all .5s ease-in-out;
+}
+
+.work-window .project:hover .projectcard-image {
+    box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .5);
+    transform: translateY(0);
+    transition: all .5s ease-in-out;
 }
 
 @media screen and (max-width: 1086px) {
