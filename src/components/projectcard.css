@@ -32,7 +32,7 @@
     z-index: 0;
     border-radius: inherit;
     transition: opacity .3s ease-in-out;
-    background: radial-gradient(circle at 50% 0, rgba(127, 207, 255, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0));
+    background: radial-gradient(circle at 50% 0, rgba(127, 255, 207, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #053, rgba(0, 0, 0, 0));
 }
 
 .work-window .project:hover .radial-bg-effect {
@@ -72,7 +72,8 @@
 }
 
 .projectcard-image {
-    background-image: url('https://assets-global.website-files.com/63dcb6e1a80e9454b630f4c4/643ecb449eefba0f82ecf90f_stadiabt-banner-mobile-p-800.png');
+    background-image: url('../assets/gear5.png');
+    border-radius: 10px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
