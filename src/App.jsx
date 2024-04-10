@@ -1,42 +1,12 @@
-import React from "react"
+import React, {useRef} from "react"
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
+import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
 import Window from "./components/Window"
 import HeroText from "./components/HeroText"
 import Loading from "./components/Loading"
 import Info from "./components/Info"
 import ProjectCard from "./components/ProjectCard"
-
-
-function AppWork() {
-    return (
-        <>
-            <main>
-                <Window />
-                <div className="fade-out"></div>
-                <div className="mobile-window">
-                    <HeroText />
-                    <div className="subtitles">
-                        <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
-                        <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
-                    </div>
-                </div>
-            </main>
-            <section>
-                <ProjectCard title="GEAR5.info" company="December 23'" subtitle="Reviving classic games for the digital age."/>
-            </section>
-        </>
-    )
-}
-
-function AppInfo() {
-    return (
-        <main>
-            <Info />
-            <div className="fade-out"></div>
-        </main>
-    )
-}
 
 
 export default function App() {
@@ -46,21 +16,58 @@ export default function App() {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 1000);
     }, [loading]);
+
+    const cursor = useRef(null);
+    const cursorLarge = useRef(false);
+
+    const mouseOver = (scale) => {
+        cursorLarge.current = true;
+        cursor.current.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    };
+
+    const mouseOut = () => {
+        cursorLarge.current = false;
+        cursor.current.style.transform = `translate(-50%, -50%) scale(1)`;
+    };
 
     return (
         <div className="app">
+            <Cursor cursor={cursor} mouseOver={mouseOver} mouseOut={mouseOut} />
             <div className="glare-top"></div>       
-            <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading}/>
+            <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading} mouseOver={mouseOver} mouseOut={mouseOut}/>
             {
                 (loading) 
                 ?   (<Loading /> )
                 :   
                 (
-                    (workPage) ? <AppWork /> : <AppInfo />
+                    (workPage) ? <AppWork mouseOver={mouseOver} mouseOut={mouseOut} /> : <AppInfo />
                 )
             }
         </div>
+    )
+}
+
+function AppWork({mouseOver, mouseOut}) {
+    return (
+        <>
+            <main>
+                <Window mouseOver={mouseOver} mouseOut={mouseOut} />
+                <div className="fade-out"></div>
+            </main>
+            <section>
+                <ProjectCard mouseOver={mouseOver} mouseOut={mouseOut} title="GEAR5.info" company="December 23'" subtitle="Reviving classic games for the digital age."/>
+            </section>
+        </>
+    )
+}
+
+function AppInfo({mouseOver, mouseOut}) {
+    return (
+        <main>
+            <Info />
+            <div className="fade-out"></div>
+        </main>
     )
 }

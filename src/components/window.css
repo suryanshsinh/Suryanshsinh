@@ -3,11 +3,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 700px;
-    /* border: 2px solid #f2f2f2; */
+    width: 90%;
+    max-width: 1100px;
     border: 1px solid rgba(242, 242, 242, .15);
     border-radius: 25px;
-    max-width: 1000px;
     background-image: radial-gradient(circle farthest-side at 50% 0, rgba(220, 220, 220, .1), rgba(0, 0, 0, 0));
     box-shadow: inset 0 0 8px rgba(0, 0, 0, .6), 0 0 60px rgba(0, 0, 0, .4), 0 0 0;
     animation: slide-up 1s ease-in-out;
@@ -31,7 +30,7 @@
     border-radius: 20px;
     height: 100%;
     border: 1px solid rgba(242, 242, 242, .3);
-    margin: 5px;
+    margin: 6px;
 }
 
 .window .title-bar {
@@ -81,52 +80,46 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 20px;
+    padding: 4rem;
+    padding-bottom: 8rem;
     border-radius: 0 0 19px 19px;
 }
 
 .hero {
     position: relative;
-    padding: 70px 132px 70px 30px;
     text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 0px 25px rgba(255, 255, 255, .3);
 }
 
 .heading {
     font-family: "Neue Montreal Medium", sans-serif;
-    font-weight: 400;
     letter-spacing: -2px;
-    line-height: 60px;
-    font-size: 60px;
+    line-height: 5.3rem;
+    font-size: 4.2rem;
     color: white;
-}
-
-.word-carousel .heading {
-    text-wrap: nowrap;
 }
 
 .word-carousel {
     display: flex;
-    margin-top: 13px;
+    height: 6.5rem;
 }
 
 .words {
     position: relative;
-    display: block;
-    height: 105px;
+    display: flex;
+    flex-direction: column;
     color: transparent;
     overflow: hidden;
-    margin-top: -15px;
-    margin-left: -5px;
 }
 
-.words h2 {
+.words div {
     font-family: "Gloock", sans-serif;
-    font-size: 60px;
     letter-spacing: 1px;
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 0.3rem 2rem 2rem 1rem;
     font-style: italic;
-    padding: 10px 30px 25px 20px;
     animation: slide 6s ease-in-out infinite;
-    background: linear-gradient(to bottom, #f2f2f2 50%, #7e7e7e 60%);
+    background: linear-gradient(to bottom, #f2f2f2 40%, #7e7e7e 55%);
     background-clip: text;
 }
 
@@ -153,13 +146,13 @@
 
 .subtitles {
     font-family: "Neue Montreal Book", sans-serif;
-    padding: 0 70px;
     display: flex;
+    margin: 3rem 0;
     letter-spacing: 1px;
     flex-direction: column;
     align-items: flex-start;
     align-self: flex-end;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: rgba(242, 242, 242, 1);
 }
 
@@ -183,23 +176,27 @@
     }
 }
 
-@media screen and (max-width: 1086px) {
+@media  screen and (max-width: 1200px){
     .window-outline {
-        height: 600px;
-        margin: auto 5vw;
+        width: 85%;
     }
-
-    .hero {
-        padding: 4vh 3vw 8vh 20px;
+    .window-content {
+        padding: 5.3vw 5.3vw 10vw;
     }
-
-    .heading, .words h2 {
-        font-size: 5vw;
+    .heading {
+        font-size: 5.5vw;
+        line-height: 7.5vw;
     }
-
-    .words {
-        height: 95px;
-        margin-top: -10px;
+    .word-carousel {
+        height: 9vw;
+    }
+    .words div {
+        font-size: 5.5vw;
+        padding-top: 0.2rem;
+        padding-left: 2.5vw;
+    }
+    .subtitles {
+        font-size: 1.7vw;
     }
 }
 
@@ -207,18 +204,9 @@
     .logo { display: none; }
     .logo-2 { display: flex; }
     .logo-3 { display: none; }
-    .subtitles {
-        align-self: flex-start;
-        padding: 0 30px;
-        font-size: 2vw;
-    }
-    .words {
-        height: 15vh;
-        margin-top: -8px;
-    }
 
-    .heading, .words h2 {
-        font-size: 6vw;
+    .heading {
+        letter-spacing: -1.5px;
     }
 }
 
@@ -226,52 +214,26 @@
     .nav {
         padding: 2rem;
     }
-    .word-carousel {
-        margin-top: 0;
-    }
-    .window-outline {
-        margin: 3rem 0 9vw;
-        height: 80vw;
-    }
-    .hero {
-        padding: 2vh 3vw 5vw 10px;
-    }
-    .words {
-        height: 12vw;
-        margin-top: -10px;
+    .window-content {
+        padding: 4vw 4vw 10vw;
     }
     .subtitles {
-        padding: 0 15px;
-        font-size: 2.5vw;
+        align-self: flex-start;
+        margin: 4vw 0;
+        font-size: 2vw;
     }
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: 700px) {
     .logo { display: none; }
     .logo-2 { display: none; }
     .logo-3 { display: flex; }
-    
-    .word-carousel {
-        margin-top: -5px;
-    }
-    .words {
-        height: 12vw;
-        margin-top: 0px;
-    }
+
     .links {
         display: none;
     }
     .hamburger {
         display: flex;
-    }
-
-    .window-outline {
-        margin: 3rem 0 9vw;
-        height: 75vw;
-    }
-    
-    .heading {
-        letter-spacing: -1.5px;
     }
 }
 
@@ -279,48 +241,13 @@
     main .window-outline {
         display: none;
     }
-    .words {
-        margin-top: -8px;
-    }
     main .fade-out {
         display: none;
     }
-
-
     .work-window {
         margin: 5rem 2rem 2rem;
     }
-    .hero {
-        margin: 30px;
-        padding: 0;
-    }
-
-    .word-carousel {
-        margin-top: 10px;
-    }
-    .words {
-        height: 20vw;
-    }
-
-    .heading, .words h2 {
-        font-size: 10vw;
-    }
-
-    .subtitles {
-        padding: 0 30px;
-        font-size: 4vw;
-    }
     .mobile-window {
         display: contents;
-    }
-}
-@media screen and (max-width: 400px){
-    .words {
-        margin-top: -3px;
-    }
-}
-@media screen and (max-width: 350px){
-    .heading {
-        line-height: 50px;
     }
 }

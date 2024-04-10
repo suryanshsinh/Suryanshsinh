@@ -4,18 +4,19 @@ import { BrowserRouter, Route, Link } from "react-router-dom"
 import linkImage from "../assets/link.png";
 import './navbar.css';
 
-export default function Navbar({workPage, setWorkPage, setLoading}) {
+export default function Navbar({workPage, setWorkPage, setLoading, mouseOver, mouseOut}) {
     const [menuBgStyles, setMenuBgStyles] = React.useState( {transform: "translateX(0%) scaleX(100%)"})
     const [menuGlowStyles, setMenuGlowStyles] = React.useState( {transform: "translateX(35px)"} )
     const [mobilePopup, setMobilePopup] = React.useState(false)
 
     const links = [
         {key: 1, link: 'https://linkedin.com/in/suryanshsinh', text: 'LinkedIn', external: true},
+        {key: 2, link: '../assets/resume.pdf', text: 'Resume', external: true},
     ]
 
     const linkItems = links.map((link) => {
             return (
-                <a href={link.link} className="link" key={link.key}>
+                <a href={link.link} className="link" key={link.key} onMouseOver={() => {mouseOver(2)}} onMouseOut={mouseOut}>
                     <span className="link-glow"></span>
                     {link.text}
                     {link.external && <img className="external-link-arrow" src={linkImage} alt={link.text} />}
@@ -25,7 +26,7 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
     )    
     const mobileLinkItems = links.map((link) => {
             return (
-                <a href={link.link} target="_blank" className="mobile-link" key={link.key}>
+                <a href={link.link} target={link.external && "_blank"} className="mobile-link" key={link.key}>
                     {link.text}
                     {link.external && <img className="external-link-arrow" src={linkImage}/>}
                 </a>
@@ -47,9 +48,9 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
         <nav>
             <div className="fade-in"></div>
             <div className="nav">
-                <h1 className="logo">Suryanshsinh Sisodiya</h1>
-                <h1 className="logo logo-2">S. Sisodiya</h1>
-                <h1 className="logo logo-3">S.</h1>
+                <h1 className="logo"><span onMouseOver={() => {mouseOver(5)}} onMouseOut={mouseOut}>Suryanshsinh Sisodiya</span></h1>
+                <h1 className="logo logo-2"><span onMouseOver={() => {mouseOver(2)}} onMouseOut={mouseOut}>S. Sisodiya</span></h1>
+                <h1 className="logo logo-3"><span onMouseOver={() => {mouseOver(2)}} onMouseOut={mouseOut}>S.</span></h1>
                 <div className="menu">
                     <div className="page-menu">
                         <CSSTransition 
@@ -59,7 +60,7 @@ export default function Navbar({workPage, setWorkPage, setLoading}) {
                         >
                             <div className="nav-glow" style={menuGlowStyles}></div>
                         </CSSTransition>
-                        <div className="page-buttons">
+                        <div className="page-buttons" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>
                             <CSSTransition
                                 in={workPage}
                                 timeout={500}

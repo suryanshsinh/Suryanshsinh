@@ -1,16 +1,16 @@
 import React from "react";
 
-export default function Hero() {
+export default function Hero({mouseOver, mouseOut}) {
     return (
         <div className="hero">
-            <div className="heading heading1">Passionate about digital crafting,</div>
+            <div className="heading heading1" onMouseOver={() => {mouseOver(7)}} onMouseOut={mouseOut}>Passionate about digital crafting,</div>
             <div className="word-carousel">
-                <div className="heading">I am a </div>
-                <div className="words">
-                    <h2 className="word">Developer</h2>
-                    <h2 className="word">Designer</h2>
-                    <h2 className="word">Creator</h2>
-                    <h2 className="word">Developer</h2>
+                <div className="heading" onMouseOver={() => {mouseOver(7)}} onMouseOut={mouseOut}>I am a </div>
+                <div className="words" onMouseOver={() => {mouseOver(7)}} onMouseOut={mouseOut}>
+                    <div className="word">Developer.</div>
+                    <div className="word">Designer.</div>
+                    <div className="word">Creator.</div>
+                    <div className="word">Developer.</div>
                 </div>
             </div>
         </div>

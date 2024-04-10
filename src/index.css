@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 body {
@@ -43,7 +44,19 @@ section {
   justify-content: center;
 }
 
-
+.cursor {
+  position: absolute;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
 
 
 
@@ -79,7 +92,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(17, 17, 17, 1) 80%);
+  background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(17, 17, 17, 1) 80%);
   height: 100%;
   width: 100%;
   pointer-events: none;

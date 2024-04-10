@@ -2,8 +2,8 @@ import React from "react";
 import HeroText from "./HeroText";
 import "./window.css";
 
-export default function Window() {
-    return (
+export default function Window({mouseOver, mouseOut}) {
+    return (<>
         <div className="window-outline">
             <div className="glare-top"></div>
 
@@ -18,20 +18,24 @@ export default function Window() {
                     </div>
                 </div>
                 <div className="window-content">
-                    <HeroText />
+                    <HeroText mouseOver={mouseOver} mouseOut={mouseOut}/>
                     <div className="subtitles">
-                        <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
-                        <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
+                        <h3 className="subtitle" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>First-year IT student at LJ Univeersity.</h3>
+                        <h3 className="subtitle" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>Based in Ahmedabad, Gujarat.</h3>
                     </div>
-                    {/* <div className="scroll-indicator">
-                        <div className="scroll-wheel">
-                            <div className="scroll-handle"></div>
-                        </div>
-                    </div> */}
                 </div>
 
             </div>
 
         </div>
+        
+        <div className="mobile-window">
+            <HeroText />
+            <div className="subtitles">
+                <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
+                <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
+            </div>
+        </div>
+        </>
     )
 }

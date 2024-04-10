@@ -1,9 +1,10 @@
 .work-window {
     position: relative;
-    margin: 0 2rem 2rem;
+    margin: 0 5rem 5rem;
     width: 100%;
     text-decoration: none;
-    max-width: 1000px;background-image: linear-gradient(190deg, #252525, #101010);
+    max-width: 1000px;
+    background-image: linear-gradient(190deg, #252525, #101010);
 }
 
 .work-window .project {
@@ -12,9 +13,8 @@
     justify-content: center;
     font-family: "Neue Montreal Book", sans-serif;
     padding: 3rem 2.5rem 0;
-    gap: 70px;
     color: #eee;
-    cursor: pointer;
+    /* cursor: pointer; */
     overflow: hidden;
 }
 
@@ -40,15 +40,16 @@
     transition: opacity .3s ease-in-out;
 }
 
-.work-window .project:hover img {
+.work-window .project:hover .title>img {
     margin-right: 10px;
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out 0.2s;
 }
 
 .projectcard-heading {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 3rem;
 }
 
 .project .title {
@@ -56,7 +57,7 @@
     justify-content: space-between;
 }
 
-.project .title img {
+.project .title>img {
     width: 2rem;
     height: 2rem;
     margin-right: 25px;
@@ -72,15 +73,12 @@
 }
 
 .projectcard-image {
-    background-image: url('../assets/gear5.png');
     border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
     width: 90%;
-    height: 90%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
     transform: translateY(30px);
     box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .25);
     transition: all .5s ease-in-out;
@@ -88,10 +86,10 @@
 
 .work-window .project:hover .projectcard-image {
     box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .5);
-    transform: translateY(0);
+    transform: translateY(0px);
     transition: all .5s ease-in-out;
 }
-
+/* 
 @media screen and (max-width: 1086px) {
     .work-window {
         margin: auto 5vw;
@@ -112,4 +110,4 @@
         width: 90%;
     }
     
-}
+} */
