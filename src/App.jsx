@@ -18,7 +18,7 @@ export default function App() {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 3000);
     }, [loading]);
 
     const cursor = useRef(null);
