@@ -8,6 +8,7 @@ import HeroText from "./components/HeroText"
 import Loading from "./components/Loading"
 import Info from "./components/Info"
 import ProjectCard from "./components/ProjectCard"
+import Gear5 from "./assets/gear5.png"
 
 
 export default function App() {
@@ -51,14 +52,47 @@ export default function App() {
 }
 
 function AppWork({mouseOver, mouseOut}) {
+    const projects = [
+        {
+            title: "GEAR5.info",
+            company: "December 23'",
+            subtitle: "Reviving classic games for the digital age.",
+            classname: "gear5",
+            image: Gear5
+        },
+        {
+            title: "Weather Station",
+            company: "January 24'",
+            subtitle: "Forecasting with ESP and cloud connectivity.",
+            classname: "weather",
+            image: Gear5
+        }, 
+        {
+            title: "Flappy Bird",
+            company: "January 24'",
+            subtitle: "A Java-powered Flappy Bird adventure.",
+            classname: "flappy",
+            image: Gear5
+        },
+    ]
+
+    const projectCards = projects.map((project, index) => {
+        return (
+            <ProjectCard key={index} mouseOver={mouseOver} mouseOut={mouseOut} title={project.title} company={project.company} subtitle={project.subtitle} classname={project.classname} image={project.image}/>
+        )
+    })
+
     return (
         <>
             <main>
                 <Window mouseOver={mouseOver} mouseOut={mouseOut} />
                 <div className="fade-out"></div>
             </main>
+            <div className="mobile-hero-hr">
+                <div className="glare-top"></div>
+            </div>
             <section>
-                <ProjectCard mouseOver={mouseOver} mouseOut={mouseOut} title="GEAR5.info" company="December 23'" subtitle="Reviving classic games for the digital age."/>
+                {projectCards}
             </section>
         </>
     )

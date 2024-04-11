@@ -1,13 +1,14 @@
-.work-window {
+.project-window {
+    margin: 3rem;
     position: relative;
-    margin: 0 5rem 5rem;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
     text-decoration: none;
-    max-width: 1000px;
     background-image: linear-gradient(190deg, #252525, #101010);
 }
 
-.work-window .project {
+.project-window .project {
     position: relative;
     display: flex;
     justify-content: center;
@@ -34,15 +35,19 @@
     transition: opacity .3s ease-in-out;
     background: radial-gradient(circle at 50% 0, rgba(127, 255, 207, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #053, rgba(0, 0, 0, 0));
 }
-
-.work-window .project:hover .radial-bg-effect {
-    opacity: 1;
-    transition: opacity .3s ease-in-out;
+.gear5 {
+    background: radial-gradient(circle at 50% 0, rgba(255, 127, 127, 0.2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, rgb(85, 0, 0), rgba(0, 0, 0, 0));
+}
+.weather {
+    background: radial-gradient(circle at 50% 0, rgba(118, 216, 255, 0.2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, rgb(0, 114, 137), rgba(0, 0, 0, 0));
+}
+.flappy {
+    background: radial-gradient(circle at 50% 0, rgba(103, 255, 199, 0.2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, rgb(0, 104, 17), rgba(0, 0, 0, 0));
 }
 
-.work-window .project:hover .title>img {
-    margin-right: 10px;
-    transition: all .3s ease-in-out 0.2s;
+.project-window .project:hover .radial-bg-effect {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
 }
 
 .projectcard-heading {
@@ -50,18 +55,23 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 3rem;
+    letter-spacing: 1px;
 }
 
 .project .title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .project .title>img {
     width: 2rem;
-    height: 2rem;
     margin-right: 25px;
     transition: all .3s ease-in-out;
+}
+.project-window .project:hover .title>img {
+    margin-right: 10px;
+    transition: all .3s ease-in-out 0.2s;
 }
 
 .projectcard-description {
@@ -79,35 +89,64 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    transform: translateY(30px);
+    transform: translateY(50px);
     box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .25);
     transition: all .5s ease-in-out;
 }
 
-.work-window .project:hover .projectcard-image {
+.project-window .project:hover .projectcard-image {
     box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .5);
-    transform: translateY(0px);
+    transform: translateY(10px);
     transition: all .5s ease-in-out;
 }
-/* 
-@media screen and (max-width: 1086px) {
-    .work-window {
-        margin: auto 5vw;
-        width: 75%;
-    }
-}
 
-@media screen and (max-width: 1000px) {
-    .work-window {
-        margin: auto 5vw;
-        width: 87%;
+@media screen and (max-width: 768px) {
+    .project-window .project {
+        margin: 1vw;
+        padding: 5.5vw 5vw 0;
+    }
+    .project .title {
+        font-size: 2.7vw;
+    }
+    .projectcard-heading {
+        margin-bottom: 5vw;
+    }
+    .project .title>img {
+        width: 3.7vw;
+        margin-right: 2vw;
+    }
+    .project-window .project:hover .title>img {
+        margin-right: 1vw;
+    }
+    .projectcard-description {
+        font-size: 2.4vw;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .work-window {
-        margin: 10rem 5vw;
-        width: 90%;
+    .project-window {
+        margin: 4vw 2vw;
     }
-    
-} */
+    .project-window .project {
+        padding: 6vw 6vw 0;
+    }
+    .radial-bg-effect {
+        opacity: 1;
+    }
+    .project .title {
+        font-size: 4vw;
+    }
+    .project .title>img {
+        width: 6vw;
+        margin-right: 3vw;
+    }
+    .projectcard-description {
+        font-size: 3.5vw;
+    }
+    .projectcard-image {
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 0 40px 50px 10px rgba(0, 0, 0, .5);
+        transform: translateY(20px);
+    }
+}

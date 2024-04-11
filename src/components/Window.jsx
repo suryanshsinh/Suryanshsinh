@@ -30,6 +30,7 @@ export default function Window({mouseOver, mouseOut}) {
         </div>
         
         <div className="mobile-window">
+            <h3 className="hero-name"><div className="hero-name-dot"></div>Suryanshsinh Sisodiya</h3>
             <HeroText />
             <div className="subtitles">
                 <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>

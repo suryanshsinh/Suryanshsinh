@@ -85,6 +85,24 @@
     border-radius: 0 0 19px 19px;
 }
 
+.hero-name {
+    font-family: "Neue Montreal Thin", sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    gap: 3vw;
+    margin: 0 0 4vw 0;
+    display: flex;
+    font-size: 5vw;
+    align-items: center;
+    letter-spacing: 1px;
+}
+.hero-name-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 1);
+}
+
 .hero {
     position: relative;
     text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 0px 25px rgba(255, 255, 255, .3);
@@ -116,7 +134,7 @@
     letter-spacing: 1px;
     font-size: 4rem;
     font-weight: 600;
-    padding: 0.2rem 2rem 2rem 1rem;
+    padding: 0.1rem 2rem 2rem 1rem;
     font-style: italic;
     animation: slide 6s ease-in-out infinite;
     background: linear-gradient(to bottom, #f2f2f2 40%, #7e7e7e 55%);
@@ -164,6 +182,12 @@
     display: none;
 }
 
+.mobile-hero-hr {
+    margin: 2rem 1rem;
+    position: relative;
+    display: none;
+}
+
 @keyframes scroll {
     from {
         transform: translateY(100%);
@@ -178,6 +202,9 @@
 
 @media  screen and (max-width: 1200px){
     .window-outline {
+        width: 85%;
+    }
+    .project-window {
         width: 85%;
     }
     .window-content {
@@ -210,15 +237,15 @@
     }
 }
 
-/* @media screen and (max-width: 800px) {
-} */
-
 @media screen and (max-width: 768px) {
     .logo { display: none; }
     .logo-2 { display: none; }
     .logo-3 { display: flex; }
     * {
         cursor: default;
+    }
+    .window {
+        margin: 1vw;
     }
     .nav {
         padding: 2rem;
@@ -246,10 +273,34 @@
     main .fade-out {
         display: none;
     }
-    .work-window {
+    .project-window {
         margin: 5rem 2rem 2rem;
     }
     .mobile-window {
-        display: contents;
+        display: block;
+        padding: 0 10vw;
+        padding-right: 0;
+    }
+    .heading {
+        font-size: 11vw;
+        line-height: 14vw;
+    }
+    .word-carousel>.heading {
+        white-space: nowrap;
+    }
+    .word-carousel {
+        height: 20vw;
+    }
+    .words div {
+        font-size: 11vw;
+        padding-left: 3vw;
+    }
+    .subtitles {
+        font-size: 3.5vw;
+        margin-top: 2vw;
+        line-height: 6vw;
+    }
+    .mobile-hero-hr {
+        display: flex;
     }
 }

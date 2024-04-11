@@ -11,8 +11,8 @@ export default function Cursor({cursor, mouseOver, mouseOut}) {
     const requestRef = useRef(null);
 
     useEffect(() => {
-        document.addEventListener('mousedown', mouseOver);
-        document.addEventListener('mouseup', mouseOut);
+        // document.addEventListener('mousedown', mouseOver);
+        // document.addEventListener('mouseup', mouseOut);
         document.addEventListener('mousemove', mouseMove);
         document.addEventListener('mouseenter', mouseEnter);
         document.addEventListener('mouseleave', mouseLeave);
@@ -20,36 +20,28 @@ export default function Cursor({cursor, mouseOver, mouseOut}) {
         animate();
 
         return () => {
-            document.removeEventListener('mousedown', mouseOver);
-            document.removeEventListener('mouseup', mouseOut);
+            // document.removeEventListener('mousedown', mouseOver);
+            // document.removeEventListener('mouseup', mouseOut);
             document.removeEventListener('mousemove', mouseMove);
             document.removeEventListener('mouseenter', mouseEnter);
             document.removeEventListener('mouseleave', mouseLeave);
             cancelAnimationFrame(requestRef.current);
         };
-    })
-
-    const toggleVisibility = () => {
-        if (cursorVisible.current) {
-            cursor.current.style.opacity = 1;
-        } else {
-            cursor.current.style.opacity = 0;
-        }
-    }
+    });
     
     const mouseEnter = () => {
         cursorVisible.current = true;
-        toggleVisibility();
+        cursor.current.style.opacity = 1;
     };
     
     const mouseLeave = () => {
         cursorVisible.current = false;
-        toggleVisibility();
+        cursor.current.style.opacity = 0;
     };
 
     const mouseMove = (e) => {
         cursorVisible.current = true;
-        toggleVisibility();
+        cursor.current.style.opacity = 1;
 
         endX.current = e.pageX;
         endY.current = e.pageY;

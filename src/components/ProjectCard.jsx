@@ -1,16 +1,15 @@
 import React from "react"
 import RightArrow from "../assets/right-arrow.svg"
-import Gear5 from "../assets/gear5.png"
 import './projectcard.css'
 import './window.css'
 
-export default function ProjectCard({title, subtitle, company, mouseOver, mouseOut}) {
+export default function ProjectCard({title, classname, subtitle, company, image, mouseOver, mouseOut}) {
     return (
-        <a className="window-outline work-window" href="gear5">
-            <div className="glare-top"></div>   
+        <a className="window-outline project-window" href="gear5">
+            <div className="glare-top"></div>
             <div className="window project" onMouseOver={() => {mouseOver(4)}} onMouseOut={mouseOut}>
-                <div className="radial-bg-effect"></div>
-                <div className="glare-top"></div>   
+                <div className={"radial-bg-effect "+classname}></div>
+                <div className="glare-top"></div>
                 <div className="projectcard-heading">
                     <div className="title">
                         <h1>{title}</h1>
@@ -21,7 +20,7 @@ export default function ProjectCard({title, subtitle, company, mouseOver, mouseO
                         {" - " + subtitle}
                     </div>
                 </div>
-                <img className="projectcard-image" src={Gear5}/>
+                <img className="projectcard-image" src={image}/>
             </div>
         </a>
     )
