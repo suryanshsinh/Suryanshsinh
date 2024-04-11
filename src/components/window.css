@@ -116,7 +116,7 @@
     letter-spacing: 1px;
     font-size: 4rem;
     font-weight: 600;
-    padding: 0.3rem 2rem 2rem 1rem;
+    padding: 0.2rem 2rem 2rem 1rem;
     font-style: italic;
     animation: slide 6s ease-in-out infinite;
     background: linear-gradient(to bottom, #f2f2f2 40%, #7e7e7e 55%);
@@ -210,7 +210,16 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
+} */
+
+@media screen and (max-width: 768px) {
+    .logo { display: none; }
+    .logo-2 { display: none; }
+    .logo-3 { display: flex; }
+    * {
+        cursor: default;
+    }
     .nav {
         padding: 2rem;
     }
@@ -222,13 +231,6 @@
         margin: 4vw 0;
         font-size: 2vw;
     }
-}
-
-@media screen and (max-width: 700px) {
-    .logo { display: none; }
-    .logo-2 { display: none; }
-    .logo-3 { display: flex; }
-
     .links {
         display: none;
     }

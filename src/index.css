@@ -53,6 +53,7 @@ section {
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
+  opacity: 0;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 10px 0 rgb(255, 255, 255);
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;

@@ -1,4 +1,5 @@
 import React, {useRef} from "react"
+import {isMobile} from "react-device-detect"
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
 import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
@@ -34,7 +35,7 @@ export default function App() {
 
     return (
         <div className="app">
-            <Cursor cursor={cursor} mouseOver={mouseOver} mouseOut={mouseOut} />
+            {!isMobile && <Cursor cursor={cursor} mouseOver={mouseOver} mouseOut={mouseOut} />}
             <div className="glare-top"></div>       
             <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading} mouseOver={mouseOver} mouseOut={mouseOut}/>
             {
