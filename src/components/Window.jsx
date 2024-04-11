@@ -20,7 +20,7 @@ export default function Window({mouseOver, mouseOut}) {
                 <div className="window-content">
                     <HeroText mouseOver={mouseOver} mouseOut={mouseOut}/>
                     <div className="subtitles">
-                        <h3 className="subtitle" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>First-year IT student at LJ Univeersity.</h3>
+                        <h3 className="subtitle" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>First-year IT student at LJ University.</h3>
                         <h3 className="subtitle" onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>Based in Ahmedabad, Gujarat.</h3>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ export default function Window({mouseOver, mouseOut}) {
             <h3 className="hero-name"><div className="hero-name-dot"></div>Suryanshsinh Sisodiya</h3>
             <HeroText />
             <div className="subtitles">
-                <h3 className="subtitle">First-year IT student at LJ Univeersity.</h3>
+                <h3 className="subtitle">First-year IT student at LJ University.</h3>
                 <h3 className="subtitle">Based in Ahmedabad, Gujarat.</h3>
             </div>
         </div>
