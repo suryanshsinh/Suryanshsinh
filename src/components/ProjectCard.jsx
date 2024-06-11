@@ -8,8 +8,8 @@ export default function ProjectCard({title, classname, subtitle, company, image,
         <a className="window-outline project-window" href="gear5">
             <div className="glare-top"></div>
             <div className="window project" onMouseOver={() => {mouseOver(4)}} onMouseOut={mouseOut}>
-                <div className={"radial-bg-effect "+classname}></div>
                 <div className="glare-top"></div>
+                <div className={"radial-bg-effect "+classname}></div>
                 <div className="projectcard-heading">
                     <div className="title">
                         <h1>{title}</h1>

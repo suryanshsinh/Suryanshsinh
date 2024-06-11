@@ -1,6 +1,6 @@
 import {useEffect, useRef} from 'react';
 
-export default function Cursor({cursor, mouseOver, mouseOut}) {
+export default function Cursor({cursor}) {
     const cursorVisible = useRef(true);
 
     const endX = useRef(window.innerWidth / 2);

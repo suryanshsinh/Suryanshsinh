@@ -134,7 +134,7 @@
     letter-spacing: 1px;
     font-size: 4rem;
     font-weight: 600;
-    padding: 0.1rem 2rem 2rem 1rem;
+    padding: 0.2rem 2rem 2rem 1rem;
     font-style: italic;
     animation: slide 6s ease-in-out infinite;
     background: linear-gradient(to bottom, #f2f2f2 40%, #7e7e7e 55%);

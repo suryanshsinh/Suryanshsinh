@@ -1,15 +1,17 @@
+/* eslint-disable react/prop-types */
 import React, {useRef} from "react"
 import {isMobile} from "react-device-detect"
-import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
+import { Analytics } from "@vercel/analytics/react"
+
 import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
 import Window from "./components/Window"
-import HeroText from "./components/HeroText"
 import Loading from "./components/Loading"
 import Info from "./components/Info"
 import ProjectCard from "./components/ProjectCard"
 import Gear5 from "./assets/gear5.png"
-
+import weather from "./assets/weather.png"
+import Footer from "./components/Footer"
 
 export default function App() {
     const [workPage, setWorkPage] = React.useState(window.location.pathname === '/');
@@ -18,7 +20,7 @@ export default function App() {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 2000);
     }, [loading]);
 
     const cursor = useRef(null);
@@ -41,17 +43,18 @@ export default function App() {
             <Navbar workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading} mouseOver={mouseOver} mouseOut={mouseOut}/>
             {
                 (loading) 
-                ?   (<Loading /> )
+                ?   (<Loading mouseOver={mouseOver} mouseOut={mouseOut} /> )
                 :   
                 (
-                    (workPage) ? <AppWork mouseOver={mouseOver} mouseOut={mouseOut} /> : <AppInfo />
+                    (workPage) ? <AppWork mouseOver={mouseOver} mouseOut={mouseOut} workPage={workPage} setWorkPage={{setWorkPage}} setLoading={setLoading} /> 
+                    : <AppInfo mouseOver={mouseOver} mouseOut={mouseOut} workPage={workPage} setWorkPage={{setWorkPage}} setLoading={setLoading}/>
                 )
             }
         </div>
     )
 }
 
-function AppWork({mouseOver, mouseOut}) {
+function AppWork({mouseOver, mouseOut, workPage, setWorkPage, setLoading}) {
     const projects = [
         {
             title: "GEAR5.info",
@@ -61,19 +64,19 @@ function AppWork({mouseOver, mouseOut}) {
             image: Gear5
         },
         {
-            title: "Weather Station",
-            company: "January 24'",
-            subtitle: "Forecasting with ESP and cloud connectivity.",
-            classname: "weather",
-            image: Gear5
-        }, 
-        {
             title: "Flappy Bird",
             company: "January 24'",
             subtitle: "A Java-powered Flappy Bird adventure.",
             classname: "flappy",
             image: Gear5
         },
+        {
+            title: "Weather Station",
+            company: "January 24'",
+            subtitle: "Forecasting with ESP and cloud connectivity.",
+            classname: "weather",
+            image: weather
+        }, 
     ]
 
     const projectCards = projects.map((project, index) => {
@@ -94,15 +97,20 @@ function AppWork({mouseOver, mouseOut}) {
             <section>
                 {projectCards}
             </section>
+            <Footer workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading} />
+            <Analytics/>
         </>
     )
 }
 
-function AppInfo({mouseOver, mouseOut}) {
+function AppInfo({mouseOver, mouseOut, workPage, setWorkPage, setLoading}) {
     return (
-        <main>
-            <Info />
-            <div className="fade-out"></div>
-        </main>
+        <>
+            <main>
+                <Info mouseOver={mouseOver} mouseOut={mouseOut} />
+                <div className="fade-out"></div>
+            </main>
+            <Footer workPage={workPage} setWorkPage={setWorkPage} setLoading={setLoading} />
+        </>
     )
 }

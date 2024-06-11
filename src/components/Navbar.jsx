@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { CSSTransition } from "react-transition-group";
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { links } from './links'
 import linkImage from "../assets/link.png";
+import { CSSTransition } from "react-transition-group";
 import './navbar.css';
 
 export default function Navbar({workPage, setWorkPage, setLoading, mouseOver, mouseOut}) {
@@ -9,14 +11,9 @@ export default function Navbar({workPage, setWorkPage, setLoading, mouseOver, mo
     const [menuGlowStyles, setMenuGlowStyles] = React.useState( {transform: "translateX(35px)"} )
     const [mobilePopup, setMobilePopup] = React.useState(false)
 
-    const links = [
-        {key: 1, link: 'https://linkedin.com/in/suryanshsinh', text: 'LinkedIn', external: true},
-        {key: 2, link: '../assets/resume.pdf', text: 'Resume', external: true},
-    ]
-
     const linkItems = links.map((link) => {
             return (
-                <a href={link.link} className="link" key={link.key} onMouseOver={() => {mouseOver(2)}} onMouseOut={mouseOut}>
+                <a target={link.external && "_blank"} href={link.link} className="link" key={link.key} onMouseOver={() => {mouseOver(2)}} onMouseOut={mouseOut}>
                     <span className="link-glow"></span>
                     {link.text}
                     {link.external && <img className="external-link-arrow" src={linkImage} alt={link.text} />}
@@ -40,8 +37,8 @@ export default function Navbar({workPage, setWorkPage, setLoading, mouseOver, mo
     }, [workPage])
 
     React.useEffect(() => {
-        setMenuBgStyles({transform: workPage ? "translateX(0%) scaleX(100%)" : "translateX(100%) scaleX(95%)"})
-        setMenuGlowStyles({transform: workPage ? "translateX(35px)" : "translateX(125px)"})
+        setMenuBgStyles({transform: workPage ? "translateX(0%) scaleX(100%)" : "translateX(98%) scaleX(90%)"})
+        setMenuGlowStyles({transform: workPage ? "translateX(35px)" : "translateX(128px)"})
     }, [])
 
     return (
@@ -76,7 +73,7 @@ export default function Navbar({workPage, setWorkPage, setLoading, mouseOver, mo
                             </Link>
                         </div>
                     </div>
-                    <div className="hamburger" onClick={() => setMobilePopup(prev => !prev)}>
+                    <div className="hamburger" onClick={() => setMobilePopup(prev => !prev)} onMouseOver={() => {mouseOver(3)}} onMouseOut={mouseOut}>
                         <CSSTransition
                             in={!mobilePopup}
                             timeout={500}

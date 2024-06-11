@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    color: #eee;
+    letter-spacing: 1px;
+    padding: 5rem;
+    justify-content: space-around;
+    border-top: solid 1px rgb(100, 100, 100);
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-title {
+    font-size: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-link {
+    font-family: 'Neue Montreal Book';
+    font-size: 15px;
+    text-decoration: none;
+    color: #eee;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}

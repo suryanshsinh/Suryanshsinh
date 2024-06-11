@@ -1,9 +1,9 @@
 import React from "react";
 import "./info.css";
 
-export default function Info() {
+export default function Info({mouseOver, mouseOut}) {
     return (
-        <div className="info">
+        <div className="info" onMouseOver={() => {mouseOver(1.1)}} onMouseOut={mouseOut}>
         <div className="glare-top"></div>
             <div className="info-outline">
             <div className="glare-top"></div>
