@@ -2,6 +2,7 @@
 import React, {useRef} from "react"
 import {isMobile} from "react-device-detect"
 import { Analytics } from "@vercel/analytics/react"
+import Lenis from 'lenis'
 
 import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
@@ -12,6 +13,19 @@ import ProjectCard from "./components/ProjectCard"
 import Gear5 from "./assets/gear5.png"
 import weather from "./assets/weather.png"
 import Footer from "./components/Footer"
+
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 export default function App() {
     const [workPage, setWorkPage] = React.useState(window.location.pathname === '/');
